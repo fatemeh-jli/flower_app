@@ -1,54 +1,22 @@
-# Miscellaneous
-*.class
-*.log
-*.pyc
-*.swp
-.DS_Store
-.atom/
-.build/
-.buildlog/
-.history
-.svn/
-.swiftpm/
-migrate_working_dir/
-
-# IntelliJ related
-*.iml
-*.ipr
-*.iws
-.idea/
-
-# VS Code related
-.vscode/
-
-# Flutter/Dart/Pub related
-**/doc/api/
-**/ios/Flutter/.last_build_id
+# Flutter/Dart
 .dart_tool/
+.flutter-plugins
 .flutter-plugins-dependencies
 .pub-cache/
 .pub/
 /build/
-/coverage/
 
-# Android related (بسیار مهم برای حذف فایل‌های اضافی)
-/android/app/debug
-/android/app/profile
-/android/app/release
+# Android
+.gradle/
+local.properties
+/android/app/build/
 /android/.gradle/
-/android/local.properties
-/android/app/build/
-*.jar
-*.aar
-*.json
+/android/app/debug/
+/android/app/profile/
+/android/app/release/
 
-# Symbolication/Obfuscation
-app.*.symbols
-app.*.map.json
-/android/
-/ios/
-/web/
-/linux/
-/macos/
-/windows/
-/android/app/build/
+# iOS
+.generated/
+Flutter/App.framework
+Flutter/Flutter.framework
+Flutter/Generated.xcconfig

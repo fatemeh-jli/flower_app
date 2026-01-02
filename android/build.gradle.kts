@@ -20,7 +20,7 @@ subprojects {
             
             android.defaultConfig {
                 targetSdkVersion(34)
-                minSdkVersion(21)
+                minSdkVersion(23)
             }
 
             // اضافه کردن این بخش برای حل ارور Unresolved reference در کاتلین

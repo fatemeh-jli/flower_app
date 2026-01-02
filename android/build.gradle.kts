@@ -1,10 +1,10 @@
-// فایل: android/build.gradle.kts
+// فایل اصلاح شده: android/build.gradle.kts
 
 allprojects {
     repositories {
         google()
         mavenCentral()
-        // میرورهای کمکی برای سرعت بیشتر و دور زدن تحریم
+        // میرورهای کمکی برای سرعت بیشتر
         maven { url = uri("https://maven.aliyun.com/repository/google") }
         maven { url = uri("https://maven.aliyun.com/repository/public") }
     }
@@ -15,20 +15,23 @@ subprojects {
         if (project.hasProperty("android")) {
             val android = project.extensions.getByName("android") as com.android.build.gradle.BaseExtension
             
-            // تحمیل نسخه 36 به تمام پکیج‌ها (حتی پکیج‌های قدیمی)
-            android.compileSdkVersion(36)
-            android.ndkVersion = "26.3.11579264"
-
+            // کاهش نسخه به 34 برای پایداری بیشتر و حل تداخل با کاتلین
+            android.compileSdkVersion(34)
+            
             android.defaultConfig {
-                // حل مشکل ارور 'unknown property flutter' در پکیج‌ها
-                targetSdkVersion(36)
+                targetSdkVersion(34)
                 minSdkVersion(21)
+            }
+
+            // اضافه کردن این بخش برای حل ارور Unresolved reference در کاتلین
+            android.compileOptions {
+                sourceCompatibility = JavaVersion.VERSION_17
+                targetCompatibility = JavaVersion.VERSION_17
             }
         }
     }
 }
 
-// ثبت تسک clean برای پاکسازی بیلد
 tasks.register<Delete>("clean") {
     delete(rootProject.layout.buildDirectory)
 }

@@ -233,13 +233,13 @@ packages:
     source: hosted
     version: "2.5.4"
   shared_preferences_android:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
       name: shared_preferences_android
-      sha256: "83af5c682796c0f7719c2bbf74792d113e40ae97981b8f266fa84574573556bc"
+      sha256: "1ee8bf911094a1b592de7ab29add6f826a7331fb854273d55918693d5364a1f2"
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "2.4.18"
+    version: "2.2.2"
   shared_preferences_foundation:
     dependency: transitive
     description:

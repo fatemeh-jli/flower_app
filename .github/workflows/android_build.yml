@@ -6,15 +6,21 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4 # آپدیت به نسخه ۴
+      - uses: actions/checkout@v4
       - uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.24.5'
-          channel: 'stable'
-      - run: flutter pub get
-      - run: flutter build apk --release --no-tree-shake-icons --android-skip-build-dependency-validation
+      
+      - name: Install Dependencies
+        run: flutter pub get
+
+      - name: Build APK
+        # این خط تمام موانع لایسنس و نسخه را دور می‌زند
+        run: flutter build apk --release --no-tree-shake-icons --android-skip-build-dependency-validation
+
       - name: Upload APK
-        uses: actions/upload-artifact@v4 # آپدیت به نسخه ۴ (حل ارور تصویر آخر)
+        uses: actions/upload-artifact@v4
         with:
           name: release-apk
-          path: build/app/outputs/flutter-apk/app-release.apk
+          # استفاده از ستاره برای پیدا کردن خودکار فایل در هر مسیری
+          path: build/app/outputs/flutter-apk/*.apk

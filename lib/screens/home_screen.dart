@@ -47,7 +47,6 @@ class _HomeScreenState extends State<HomeScreen> {
     super.dispose();
   }
 
-  // نمایش سبد خرید به صورت شیت پایین صفحه کاملاً متصل به Provider
   void _showCartSheet() {
     showModalBottomSheet(
       context: context,
@@ -55,7 +54,6 @@ class _HomeScreenState extends State<HomeScreen> {
       backgroundColor: Colors.white,
       shape: const RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(25))),
       builder: (context) {
-        // استفاده از Consumer برای آپدیت لحظه‌ای سبد خرید
         return Consumer<CartModel>(
           builder: (context, cart, child) {
             return Container(
@@ -168,7 +166,6 @@ class _HomeScreenState extends State<HomeScreen> {
                       icon: const Icon(Icons.person_outline, color: Color(0xFF2F4F4F)),
                       onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const ProfileScreen())),
                     ),
-                    // آیکون سبد خرید هوشمند با نشانگر تعداد
                     Consumer<CartModel>(
                       builder: (context, cart, child) {
                         return Stack(
@@ -201,7 +198,6 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           
-          // اسلایدر
           Container(
             height: 250,
             margin: const EdgeInsets.symmetric(horizontal: 16),
@@ -221,7 +217,7 @@ class _HomeScreenState extends State<HomeScreen> {
           
           const SizedBox(height: 20),
           
-          // محصولات (Grid)
+          // محصولات (Grid) با ۶ باکس و توضیحات خاص
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: GridView.count(
@@ -232,10 +228,12 @@ class _HomeScreenState extends State<HomeScreen> {
               crossAxisSpacing: 15,
               childAspectRatio: 1.1,
               children: [
-                _buildModernCard("هدیه‌ای اقتصادی", "120000", "assets/images/egh.jpg"),
-                _buildModernCard("باکس‌های مجلل", "450000", "assets/images/box.jpg"),
-                _buildModernCard("تک شاخه‌های ممتاز", "85000", "assets/images/single.jpg"),
-                _buildModernCard("شکوهِ میزبانی", "980000", "assets/images/wedding.jpg"),
+                _buildModernCard("گل‌های تک شاخه", "برای تزیین‌های شخصی", "assets/images/single.jpg"),
+                _buildModernCard("دسته گل‌های اقتصادی", "برای هدیه دادن و خوشحالی بی‌دلیل", "assets/images/egh.jpg"),
+                _buildModernCard("باکس‌های مجلل", "سورپرایزهای خاص و به‌یادماندنی", "assets/images/box.jpg"),
+                _buildModernCard("شکوهِ عروس", "درخشش در خاص‌ترین شب زندگی", "assets/images/bride.jpg"),
+                _buildModernCard("گل‌آرایی مراسم", "شکوهِ میزبانی در جشن‌های شما", "assets/images/wedding.jpg"),
+                _buildModernCard("لحظاتِ خوشحالی", "یک انتخاب هوشمندانه و زیبا", "assets/images/pool.jpg"),
               ],
             ),
           ),
@@ -245,55 +243,40 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget _buildModernCard(String title, String price, String assetPath) {
-    return GestureDetector(
-      onTap: () {
-        // استفاده از Provider برای اضافه کردن به سبد خرید سراسری
-        Provider.of<CartModel>(context, listen: false).addToCart({
-          "name": title,
-          "price": price,
-          "img": assetPath
-        });
-
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text("$title به سبد اضافه شد ✨", style: const TextStyle(fontFamily: 'Vazir')),
-            backgroundColor: const Color(0xFF556B2F),
-            duration: const Duration(milliseconds: 800),
-            behavior: SnackBarBehavior.floating,
-          ),
-        );
-      },
-      child: Container(
-        decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(20),
-          child: Stack(
-            children: [
-              Image.asset(assetPath, fit: BoxFit.cover, width: double.infinity, height: double.infinity),
-              Container(
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: [Colors.transparent, Colors.black.withOpacity(0.6)],
-                  ),
+  Widget _buildModernCard(String title, String subtitle, String assetPath) {
+    return Container(
+      decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(20),
+        child: Stack(
+          children: [
+            Image.asset(assetPath, fit: BoxFit.cover, width: double.infinity, height: double.infinity),
+            Container(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [Colors.transparent, Colors.black.withOpacity(0.75)],
                 ),
               ),
-              Positioned(
-                bottom: 12,
-                right: 12,
-                left: 12,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Text(title, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 13, color: Colors.white)),
-                    Text("$price T", style: const TextStyle(fontSize: 11, color: Color(0xFFB3E5FC))),
-                  ],
-                ),
+            ),
+            Positioned(
+              bottom: 12,
+              right: 12,
+              left: 12,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Text(title, 
+                    style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 13, color: Colors.white)),
+                  const SizedBox(height: 4),
+                  Text(subtitle, 
+                    style: TextStyle(fontSize: 10, color: Colors.white.withOpacity(0.85)),
+                    textAlign: TextAlign.right),
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

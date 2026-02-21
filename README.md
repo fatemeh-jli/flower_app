@@ -35,6 +35,7 @@ A high-fidelity flower shopping application built with **Flutter**. This project
 | **Shopping Cart** | **Darcy Studio** |
 
 > **Darcy Studio:** Where you are the florist! Craft your perfect bouquet from scratch and pair it with a hand-written card.
+> 
 > **استودیو دارسی:** جایی که شما گل‌فروش هستید! دسته‌گل خود را از صفر طراحی کنید و یک کارت پستال برای آن بنویسید.
 ## Implementation Notes | نکات پیاده‌سازی
 

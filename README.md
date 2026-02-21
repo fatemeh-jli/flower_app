@@ -1,4 +1,3 @@
-<img width="627" height="1022" alt="image" src="https://github.com/user-attachments/assets/fd8ba9ff-bcff-49a6-8861-1e495770db51" /><img width="627" height="1022" alt="image" src="https://github.com/user-attachments/assets/5ade6a56-04bc-413b-861f-50e91133766f" /># Flower Shop App
 
 اپلیکیشن مدرن برای خرید گل که با استفاده از **Flutter** طراحی شده است.
 
@@ -23,16 +22,20 @@
 
 ##  پیش‌نمایش (Preview)
 
-Showcase Page
-<img width="623" height="908" alt="image" src="https://github.com/user-attachments/assets/6cb70d6b-6e9b-4036-a4a2-f8cd0da7505f" />
-Marketplace
-<img width="617" height="907" alt="image" src="https://github.com/user-attachments/assets/9e2fe366-c395-4380-9f60-c57a346e5bc2" />
-shopping Card
-<img width="620" height="906" alt="image" src="https://github.com/user-attachments/assets/2fe7e8eb-408b-4317-8777-877073ce639a" />
-Darcy Studio – where you are the florist! Craft your perfect bouquet from scratch and pair it with a hand-written card.
-<img width="619" height="906" alt="image" src="https://github.com/user-attachments/assets/dc078859-f3ed-4bcb-b9ba-6057113bb95e" />
 
+| 🏷️ Showcase & Explore | 🛒 Marketplace (Shop) |
+|:---:|:---:|
+| <img src="https://github.com/user-attachments/assets/6cb70d6b-6e9b-4036-a4a2-f8cd0da7505f" width="250"> | <img src="https://github.com/user-attachments/assets/9e2fe366-c395-4380-9f60-c57a346e5bc2" width="250"> |
+| **Showcase Page** | **Marketplace** |
 
+---
+
+| 🛍️ Shopping Cart | ✨ Darcy Studio (Customization) |
+|:---:|:---:|
+| <img src="https://github.com/user-attachments/assets/2fe7e8eb-408b-4317-8777-877073ce639a" width="250"> | <img src="https://github.com/user-attachments/assets/dc078859-f3ed-4bcb-b9ba-6057113bb95e" width="250"> |
+| **Shopping Cart** | **Darcy Studio** |
+
+> **Darcy Studio:** Where you are the florist! Craft your perfect bouquet from scratch and pair it with a hand-written card.
 
 ---
 

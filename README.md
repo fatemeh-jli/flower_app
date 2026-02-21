@@ -1,8 +1,7 @@
-این نسخه کاملاً رسمی، کوتاه و متمرکز بر نکات فنی است که برای کارفرمایان حرفه‌ای جذابیت بیشتری دارد:
 
 ---
 
-# Flower App - Flutter UI Kit
+# Flower App - Flutter 
 
 A high-fidelity flower shopping application built with **Flutter**. This project focuses on premium UI implementation, smooth transitions, and modular code architecture.
 

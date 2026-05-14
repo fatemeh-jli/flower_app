@@ -1,51 +1,123 @@
+# 📊 Linux System Monitor
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=GNU%20Bash&logoColor=white">
+  <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black">
+  <img src="https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white">
+</p>
+
+**Linux System Monitor** یک ابزار خط فرمان برای پایش لحظه‌ای منابع سیستم است که با **Bash** نوشته شده. این ابزار می‌تواند مصرف **CPU**، **RAM** و **Disk** را با نمودارهای ASCII نمایش دهد و در صورت مصرف بالای ۸۰٪ هشدار بدهد.
 
 ---
 
-# Flower App - Flutter 
+## 🚀 Features
 
-A high-fidelity flower shopping application built with **Flutter**. This project focuses on premium UI implementation, smooth transitions, and modular code architecture.
-
-این پروژه یک اپلیکیشن مدرن خرید گل است که با تمرکز بر پیاده‌سازی دقیق رابط کاربری و انیمیشن‌های نرم با استفاده از فلاتر توسعه یافته است.
-
-## Technical Highlights | ویژگی‌های فنی
-
-* **Responsive Layouts:** Optimized for all mobile screen dimensions.
-* **Hero Transitions:** Seamless page navigation and micro-interactions.
-* **State Management:** Implemented using **Provider** for scalable logic.
-* **Clean Architecture:** Organized structure for high maintainability.
-
-## Tech Stack | تکنولوژی‌ها
-
-* **Framework:** Flutter
-* **Language:** Dart
-* **State Management:** Provider
-* **Design System:** Material Design 3
-
-## App Preview | پیش‌نمایش
-| 🏷️ Showcase & Explore | 🛒 Marketplace (Shop) |
-|:---:|:---:|
-| <img src="https://github.com/user-attachments/assets/6cb70d6b-6e9b-4036-a4a2-f8cd0da7505f" width="250"> | <img src="https://github.com/user-attachments/assets/9e2fe366-c395-4380-9f60-c57a346e5bc2" width="250"> |
-| **Showcase Page** | **Marketplace** |
+| قابلیت | توضیح |
+|--------|-------|
+| 📈 CPU Monitoring | نمایش مصرف پردازنده با نمودار ASCII |
+| 🧠 RAM Monitoring | نمایش مصرف حافظه با نمودار ASCII |
+| 💾 Disk Monitoring | نمایش مصرف دیسک با نمودار ASCII |
+| 🔄 All-in-One | مشاهده همزمان همه منابع |
+| ⚠️ Alert System | هشدار خودکار در مصرف بالای ۸۰٪ |
+| 🎛️ Interactive Menu | منوی تعاملی ساده با اعداد ۱ تا ۵ |
 
 ---
 
-| 🛍️ Shopping Cart | ✨ Darcy Studio (Customization) |
-|:---:|:---:|
-| <img src="https://github.com/user-attachments/assets/2fe7e8eb-408b-4317-8777-877073ce639a" width="250"> | <img src="https://github.com/user-attachments/assets/dc078859-f3ed-4bcb-b9ba-6057113bb95e" width="250"> |
-| **Shopping Cart** | **Darcy Studio** |
+## 📸 Preview
 
-> **Darcy Studio:** Where you are the florist! Craft your perfect bouquet from scratch and pair it with a hand-written card.
-> 
-> **استودیو دارسی:** جایی که شما گل‌فروش هستید! دسته‌گل خود را از صفر طراحی کنید و یک کارت پستال برای آن بنویسید.
-## Implementation Notes | نکات پیاده‌سازی
+### Main Menu
+```
+System Resource Monitoring
+--------------------------
+1) CPU
+2) RAM  
+3) Disk
+4) Show All
+5) Exit
+```
 
-* **Data:** In-memory storage (No persistent database).
-* **Build:** Fully configured for Android APK generation.
+### CPU Monitoring
+```
+CPU Usage: [##############] 28%
+CPU usage is normal.
+```
 
-## Author | نویسنده
-
-**Fatemeh Jalali** - [GitHub](https://github.com/fatemeh-jli)
+### Alert (High Usage)
+```
+CPU Usage: [########################################] 92%
+⚠️ WARNING: High CPU usage!
+```
 
 ---
 
-فایل README شما الان آماده است. آیا نیاز داری بخش **How to Run** (نحوه اجرا) را هم اضافه کنم یا همین مقدار کافی است؟
+## 🛠️ Installation
+
+### Prerequisites
+```bash
+sudo apt update
+sudo apt install bc gawk
+```
+
+### Clone & Run
+```bash
+git clone https://github.com/fatemeh-jli/linux-monitor-bash.git
+cd linux-monitor-bash
+chmod +x monitor.sh
+./monitor.sh
+```
+
+---
+
+## 📊 How It Works
+
+| Resource | Command | Calculation |
+|----------|---------|-------------|
+| **CPU** | `top -bn1` | User% + System% |
+| **RAM** | `free` | (Used × 100) / Total |
+| **Disk** | `df /` | Usage% of `/` |
+
+### ASCII Chart Logic
+```bash
+COUNT=$(echo "$PERCENT / 2" | bc)
+BAR=$(printf "%0.s#" $(seq 1 $COUNT))
+# 2% consumption = 1 character
+```
+
+---
+
+## 📁 Project Structure
+
+```
+linux-monitor-bash/
+├── monitor.sh      # Main monitoring script
+└── README.md       # Project documentation
+```
+
+---
+
+## 👩‍💻 Author
+
+**Fatemeh Jalali**
+
+[![GitHub](https://img.shields.io/badge/GitHub-fatemeh--jli-blue?logo=github)](https://github.com/fatemeh-jli)
+[![Gmail](https://img.shields.io/badge/Gmail-fatemehjalali11711-red?logo=gmail)](mailto:fatemehjalali11711@gmail.com)
+
+---
+
+## 🙏 Acknowledgements
+
+- **Professor:** Sajjad Eskandari
+- **Course:** Operating Systems Lab
+- **University:** Bu-Ali Sina University, Hamedan
+
+---
+
+## 📝 License
+
+MIT © [Fatemeh Jalali](https://github.com/fatemeh-jli)
+
+---
+
+<p align="center">
+  ⭐ If this project helped you, please give it a star! ⭐
+</p>

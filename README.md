@@ -1,101 +1,66 @@
-# 📊 Linux System Monitor
-
 <p align="center">
-  <img src="https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=GNU%20Bash&logoColor=white">
-  <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black">
-  <img src="https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white">
+  <img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white">
+  <img src="https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white">
+  <img src="https://img.shields.io/badge/Provider-6B5B95?style=for-the-badge&logo=flutter&logoColor=white">
+  <img src="https://img.shields.io/badge/Material%20Design%203-757575?style=for-the-badge&logo=materialdesign&logoColor=white">
 </p>
 
-**Linux System Monitor** یک ابزار خط فرمان برای پایش لحظه‌ای منابع سیستم است که با **Bash** نوشته شده. این ابزار می‌تواند مصرف **CPU**، **RAM** و **Disk** را با نمودارهای ASCII نمایش دهد و در صورت مصرف بالای ۸۰٪ هشدار بدهد.
+# Flower App - Flutter 
+
+A high-fidelity flower shopping application built with **Flutter**. This project focuses on premium UI implementation, smooth transitions, and modular code architecture.
+
+این پروژه یک اپلیکیشن مدرن خرید گل است که با تمرکز بر پیاده‌سازی دقیق رابط کاربری و انیمیشن‌های نرم با استفاده از فلاتر توسعه یافته است.
 
 ---
 
-## 🚀 Features
+## Technical Highlights | ویژگی‌های فنی
 
-| قابلیت | توضیح |
-|--------|-------|
-| 📈 CPU Monitoring | نمایش مصرف پردازنده با نمودار ASCII |
-| 🧠 RAM Monitoring | نمایش مصرف حافظه با نمودار ASCII |
-| 💾 Disk Monitoring | نمایش مصرف دیسک با نمودار ASCII |
-| 🔄 All-in-One | مشاهده همزمان همه منابع |
-| ⚠️ Alert System | هشدار خودکار در مصرف بالای ۸۰٪ |
-| 🎛️ Interactive Menu | منوی تعاملی ساده با اعداد ۱ تا ۵ |
+| ویژگی | توضیح |
+|-------|-------|
+| **Responsive Layouts** | Optimized for all mobile screen dimensions |
+| **Hero Transitions** | Seamless page navigation and micro-interactions |
+| **State Management** | Implemented using **Provider** for scalable logic |
+| **Clean Architecture** | Organized structure for high maintainability |
 
 ---
 
-## 📸 Preview
+## Tech Stack | تکنولوژی‌ها
 
-### Main Menu
-```
-System Resource Monitoring
---------------------------
-1) CPU
-2) RAM  
-3) Disk
-4) Show All
-5) Exit
-```
-
-### CPU Monitoring
-```
-CPU Usage: [##############] 28%
-CPU usage is normal.
-```
-
-### Alert (High Usage)
-```
-CPU Usage: [########################################] 92%
-⚠️ WARNING: High CPU usage!
-```
+| تکنولوژی | کاربرد |
+|-----------|--------|
+| **Flutter** | Framework |
+| **Dart** | Language |
+| **Provider** | State Management |
+| **Material Design 3** | Design System |
 
 ---
 
-## 🛠️ Installation
+## App Preview | پیش‌نمایش
 
-### Prerequisites
-```bash
-sudo apt update
-sudo apt install bc gawk
-```
+| 🏷️ Showcase & Explore | 🛒 Marketplace (Shop) |
+|:---:|:---:|
+| <img src="https://github.com/user-attachments/assets/6cb70d6b-6e9b-4036-a4a2-f8cd0da7505f" width="250"> | <img src="https://github.com/user-attachments/assets/9e2fe366-c395-4380-9f60-c57a346e5bc2" width="250"> |
+| **Showcase Page** | **Marketplace** |
 
-### Clone & Run
-```bash
-git clone https://github.com/fatemeh-jli/linux-monitor-bash.git
-cd linux-monitor-bash
-chmod +x monitor.sh
-./monitor.sh
-```
+| 🛍️ Shopping Cart | ✨ Darcy Studio (Customization) |
+|:---:|:---:|
+| <img src="https://github.com/user-attachments/assets/2fe7e8eb-408b-4317-8777-877073ce639a" width="250"> | <img src="https://github.com/user-attachments/assets/dc078859-f3ed-4bcb-b9ba-6057113bb95e" width="250"> |
+| **Shopping Cart** | **Darcy Studio** |
 
----
-
-## 📊 How It Works
-
-| Resource | Command | Calculation |
-|----------|---------|-------------|
-| **CPU** | `top -bn1` | User% + System% |
-| **RAM** | `free` | (Used × 100) / Total |
-| **Disk** | `df /` | Usage% of `/` |
-
-### ASCII Chart Logic
-```bash
-COUNT=$(echo "$PERCENT / 2" | bc)
-BAR=$(printf "%0.s#" $(seq 1 $COUNT))
-# 2% consumption = 1 character
-```
+> **Darcy Studio:** Where you are the florist! Craft your perfect bouquet from scratch and pair it with a hand-written card.
+> 
+> **استودیو دارسی:** جایی که شما گل‌فروش هستید! دسته‌گل خود را از صفر طراحی کنید و یک کارت پستال برای آن بنویسید.
 
 ---
 
-## 📁 Project Structure
+## Implementation Notes | نکات پیاده‌سازی
 
-```
-linux-monitor-bash/
-├── monitor.sh      # Main monitoring script
-└── README.md       # Project documentation
-```
+* **Data:** In-memory storage (No persistent database)
+* **Build:** Fully configured for Android APK generation
 
 ---
 
-## 👩‍💻 Author
+## 👩‍💻 Author | نویسنده
 
 **Fatemeh Jalali**
 
@@ -104,20 +69,6 @@ linux-monitor-bash/
 
 ---
 
-## 🙏 Acknowledgements
-
-- **Professor:** Sajjad Eskandari
-- **Course:** Operating Systems Lab
-- **University:** Bu-Ali Sina University, Hamedan
-
----
-
-## 📝 License
-
-MIT © [Fatemeh Jalali](https://github.com/fatemeh-jli)
-
----
-
 <p align="center">
-  ⭐ If this project helped you, please give it a star! ⭐
+  ⭐ If you like this project, give it a star! ⭐
 </p>
